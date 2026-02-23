@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* Center hero section */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    font-size:64px;
+    margin:0;
+}
+
+p{
+    font-size:22px;
+    color:#94a3b8;
+    max-width:600px;
+}
+
+/* Button */
+.btn{
+    margin-top:25px;
+    padding:14px 28px;
+    border-radius:30px;
+    background:#3b82f6;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* Mobile */
+@media(max-width:600px){
+    h1{
+        font-size:40px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>Your Name</h1>
+    <p>Write a short bio here — what you do, what you make, or who you are.</p>
+
+    <a class="btn" href="#">Contact Me</a>
+</div>
+
+</body>
+</html>
