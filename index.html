@@ -1,74 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toby Gregg</title>
-
-<style>
-body{
-    margin:0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background:#0f172a;
-    color:white;
-}
-
-/* Center hero section */
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-h1{
-    font-size:64px;
-    margin:0;
-}
-
-p{
-    font-size:22px;
-    color:#94a3b8;
-    max-width:600px;
-}
-
-/* Button */
-.btn{
-    margin-top:25px;
-    padding:14px 28px;
-    border-radius:30px;
-    background:#3b82f6;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:scale(1.05);
-}
-
-/* Mobile */
-@media(max-width:600px){
-    h1{
-        font-size:40px;
-    }
-}
-</style>
-
+  <meta charset="UTF-8">
+  <title>Toby Gregg</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<div class="hero">
-    <h1>Toby Gregg</h1>
-    <p>Welcome to my website. This is currently under construction.</p>
+<div class="bg-blob blob1"></div>
+<div class="bg-blob blob2"></div>
+    
+<nav>
+  <h1>Toby Gregg</h1>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="menu">
+    <a href="music.html">Music</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="videography.html">Videography</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-    <a class="btn" href="#">Contact Me</a>
-</div>
+<section class="hero reveal">
+  <div class="hero-text">
+    <h2>Toby Gregg</h2>
+    <p>A bit of everything.</p>
+    <a href="contact.html" class="btn">Get In Touch</a>
+  </div>
+  <img src="your-photo.jpg">
+</section>
 
+<section class="section">
+  <h3>Explore My Work</h3>
+  <div class="category-buttons">
+    <a href="music.html">Music</a>
+    <a href="engineering.html">Engineering</a>
+    <a href="videography.html">Videography</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Toby Gregg. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+    
 </body>
 </html>
