@@ -56,17 +56,17 @@ nav h1 {
 }
 
 /* MENU */
-.menu {
-  display: flex;
-  gap: 30px;
-}
-
 .menu a {
-  transition: 0.3s;
+  padding: 10px 18px;
+  border-radius: 25px;
+  transition: 0.35s ease;
+  border: 1px solid transparent;
 }
 
 .menu a:hover {
-  color: #00aaff;
+  border: 1px solid #00aaff;
+  background: rgba(0,170,255,0.1);
+  transform: translateY(-2px);
 }
 
 /* HAMBURGER */
