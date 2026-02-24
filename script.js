@@ -1,30 +1,19 @@
-// Page transition (SAFE VERSION)
-document.querySelectorAll("a").forEach(link => {
+function reveal(){
+  document.querySelectorAll(".reveal").forEach(el=>{
+    const top = el.getBoundingClientRect().top;
 
-  // Only apply to internal links
-  if(link.hostname === window.location.hostname){
+    if(top < window.innerHeight - 50){
+      el.classList.add("active");
+    }
+  });
+}
 
-    link.addEventListener("click", function(e){
-
-      // Ignore anchors, mailto, or javascript links
-      if(link.getAttribute("href").startsWith("#")) return;
-
-      e.preventDefault();
-
-      const transition = document.querySelector(".page-transition");
-
-      if(transition){
-        transition.classList.add("active");
-
-        setTimeout(()=>{
-          window.location.href = link.href;
-        }, 500);
-      } else {
-        window.location.href = link.href;
-      }
-
-    });
-
-  }
-
+/* Run immediately when page loads */
+window.addEventListener("load", ()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    el.classList.add("active");
+  });
 });
+
+/* Run on scroll */
+window.addEventListener("scroll", reveal);
