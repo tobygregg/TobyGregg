@@ -337,10 +337,10 @@ textarea {
   }
 
   .hero h1{
-  font-size: clamp(4.5rem, 9vw, 8.5rem);
+  font-size: clamp(5.5rem, 10vw, 10rem);
   font-weight: 900;
-  line-height: 1;
-  letter-spacing: -3px;
+  line-height: 0.95;
+  letter-spacing: -4px;
 
   background: linear-gradient(90deg,#00aaff,#0066ff,#00aaff);
   background-size:200%;
@@ -348,7 +348,12 @@ textarea {
   -webkit-text-fill-color:transparent;
 
   animation: gradientMove 5s linear infinite;
-}
+  }
+
+  .hero{
+  gap:80px;
+  align-items:center;
+  }
   
   @keyframes gradientMove{
     0%{ background-position:0%; }
