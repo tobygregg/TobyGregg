@@ -297,5 +297,14 @@ textarea {
   @keyframes bgFloat{
     0%{ transform: translateY(0px) scale(1); }
     100%{ transform: translateY(-40px) scale(1.05); }
+  }
+
+  body{
+  opacity:0;
+  animation: pageLoad 0.8s ease forwards;
+  }
+  
+  @keyframes pageLoad{
+    to{ opacity:1; }
 }
 }
