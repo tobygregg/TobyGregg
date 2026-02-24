@@ -295,7 +295,7 @@ textarea {
     to { transform: translateX(100%); }
   }
 
-  /* Animated Background Layer */
+  /* Animated Background Layers */
   body::before{
   content:"";
   position:fixed;
