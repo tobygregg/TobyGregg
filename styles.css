@@ -149,6 +149,7 @@ nav h1 {
   font-weight: 600;
   background: linear-gradient(90deg,#0066ff,#00aaff);
   transition: 0.3s;
+  color: white;
 }
 
 .btn:hover {
