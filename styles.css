@@ -336,4 +336,28 @@ textarea {
   html{
   scroll-behavior:smooth;
   }
+
+  .work-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.work-btn{
+  padding:14px 28px;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  color:white;
+  background: linear-gradient(90deg,#0066ff,#00aaff);
+  transition: 0.3s ease;
+  position:relative;
+  overflow:hidden;
+  }
+  
+  .work-btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,170,255,0.5);
+  }
 }
