@@ -337,7 +337,7 @@ textarea {
   scroll-behavior:smooth;
   }
 
-  .work-buttons{
+.work-buttons{
   margin-top:40px;
   display:flex;
   gap:20px;
@@ -356,7 +356,7 @@ textarea {
   overflow:hidden;
   }
   
-  .work-btn:hover{
+.work-btn:hover{
     transform: translateY(-4px);
     box-shadow: 0 10px 30px rgba(0,170,255,0.5);
   }
