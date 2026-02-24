@@ -1,53 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Page transition (SAFE VERSION)
+document.querySelectorAll("a").forEach(link => {
 
-  // Reveal animation
-  document.querySelectorAll(".reveal").forEach(el=>{
-    el.classList.add("active");
-  });
+  // Only apply to internal links
+  if(link.hostname === window.location.hostname){
 
-  // Hamburger menu
-  const hamburger = document.querySelector(".hamburger");
-  const menu = document.querySelector(".menu");
+    link.addEventListener("click", function(e){
 
-  if(hamburger){
-    hamburger.addEventListener("click", ()=>{
-      menu.classList.toggle("active");
+      // Ignore anchors, mailto, or javascript links
+      if(link.getAttribute("href").startsWith("#")) return;
+
+      e.preventDefault();
+
+      const transition = document.querySelector(".page-transition");
+
+      if(transition){
+        transition.classList.add("active");
+
+        setTimeout(()=>{
+          window.location.href = link.href;
+        }, 500);
+      } else {
+        window.location.href = link.href;
+      }
+
     });
+
   }
-
-  // Page transition animation
-  document.querySelectorAll("a").forEach(link=>{
-    if(link.href && link.href.startsWith(window.location.origin)){
-      link.addEventListener("click", e=>{
-        e.preventDefault();
-
-        const transition = document.querySelector(".page-transition");
-        if(transition){
-          transition.classList.add("active");
-
-          setTimeout(()=>{
-            window.location.href = link.href;
-          },500);
-        }
-      });
-    }
-  });
-
-  // Mouse glow follow effect
-  const glow = document.createElement("div");
-  glow.style.position = "fixed";
-  glow.style.width = "250px";
-  glow.style.height = "250px";
-  glow.style.borderRadius = "50%";
-  glow.style.background = "radial-gradient(circle, rgba(0,170,255,0.25), transparent 70%)";
-  glow.style.pointerEvents = "none";
-  glow.style.filter = "blur(40px)";
-  glow.style.zIndex = "-1";
-  document.body.appendChild(glow);
-
-  document.addEventListener("mousemove", e=>{
-    glow.style.left = (e.clientX - 125) + "px";
-    glow.style.top = (e.clientY - 125) + "px";
-  });
 
 });
