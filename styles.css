@@ -300,62 +300,6 @@ textarea{
   transform:translateY(0);
 }
 
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero{
-  grid-template-columns:1fr;
-  text-align:center;
-  padding:120px 8% 60px;
-}
-
-.hero-image{
-  max-width:280px;
-  margin:auto;
-}
-
-.buttons{
-  justify-content:center;
-}
-
-.explore-header{
-  flex-direction:column;
-  text-align:center;
-}
-
-.explore-header h2{
-  font-size:2.5rem;
-}
-
-.menu{
-  position:fixed;
-  right:-100%;
-  top:0;
-  height:100vh;
-  width:260px;
-  background:rgba(10,15,25,0.95);
-  backdrop-filter:blur(20px);
-  flex-direction:column;
-  padding:80px 30px;
-  transition:0.35s ease;
-  z-index:999;
-}
-
-.menu.active{
-  right:0;
-}
-
-.menu a{
-  width:100%;
-  text-align:left;
-}
-
-.hamburger{
-  display:flex;
-}
-
-
 /* =========================
    ABOUT SECTION
 ========================= */
@@ -464,5 +408,61 @@ textarea{
 }
 
 }
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+  grid-template-columns:1fr;
+  text-align:center;
+  padding:120px 8% 60px;
+}
+
+.hero-image{
+  max-width:280px;
+  margin:auto;
+}
+
+.buttons{
+  justify-content:center;
+}
+
+.explore-header{
+  flex-direction:column;
+  text-align:center;
+}
+
+.explore-header h2{
+  font-size:2.5rem;
+}
+
+.menu{
+  position:fixed;
+  right:-100%;
+  top:0;
+  height:100vh;
+  width:260px;
+  background:rgba(10,15,25,0.95);
+  backdrop-filter:blur(20px);
+  flex-direction:column;
+  padding:80px 30px;
+  transition:0.35s ease;
+  z-index:999;
+}
+
+.menu.active{
+  right:0;
+}
+
+.menu a{
+  width:100%;
+  text-align:left;
+}
+
+.hamburger{
+  display:flex;
+}
+
 
 }
