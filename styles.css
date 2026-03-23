@@ -342,6 +342,21 @@ textarea{
   box-shadow:0 30px 60px rgba(0,120,255,0.25);
 }
 
+.main-about-image img{
+  width:100%;
+  max-width:420px;
+  height:450px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  transition:0.4s ease;
+}
+
+.main-about-image img:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 60px rgba(0,120,255,0.25);
+}
+
 /* Blocks */
 
 .about-block{
