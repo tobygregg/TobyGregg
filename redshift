@@ -1,1 +1,102 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <title>Redshift</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Description for Google snippet -->
+  <meta name="description" content="R">
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Redshift - Guernsey Band">
+  <meta property="og:description" content="Redshift - We are a band from Guernsey, come listen to our music here!">
+  <meta property="og:image" content="https://tobygregg.com/redshiftog.jpg"> <!-- Your social preview image -->
+  <meta property="og:url" content="https://redshift.tobygregg.com">
+  <meta property="og:type" content="website">
+</head>
+
+<body>
+
+<div class="bg-blob blob1"></div>
+<div class="bg-blob blob2"></div>
+    
+<nav>
+  <h1>Redshift</h1>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="menu"> 
+    <a href="./about.html">About</a> 
+    <a href="./studies.html">Studies</a>
+    <a href="./music.html">Music</a> 
+    <a href="./engineering.html">Engineering</a> 
+    <a href="./videography.html">Videography</a> 
+    <a href="./contact.html">Contact</a>
+  </div> 
+</nav>
+
+<section class="hero">
+
+  <div class="hero-text reveal">
+
+    <h1>Redshift</h1>
+
+    <p>I copy and pasted my website but ill finish this soon</p>
+
+    <div class="buttons">
+      <a href="contact.html" class="btn">Contact Me</a>
+
+      <a href="https://www.linkedin.com/in/tobygregg"
+         target="_blank"
+         class="btn linkedin-btn">
+         <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <img src="TobyGregg.PNG" class="hero-image reveal">
+
+</section>
+
+<section class="explore-section reveal">
+
+  <div class="explore-header">
+
+    <h2>Explore My Work</h2>
+
+    <div class="work-buttons">
+      <a href="music.html" class="work-btn">
+        <i class="fas fa-music"></i> Music
+      </a>
+
+      <a href="engineering.html" class="work-btn">
+        <i class="fas fa-cogs"></i> Engineering
+      </a>
+
+      <a href="videography.html" class="work-btn">
+        <i class="fas fa-video"></i> Videography
+      </a>
+
+      <a href="studies.html" class="work-btn">
+        <i class="fas fa-video"></i> Studies
+      </a>
+      
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+     © 2026 Toby Gregg.  All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+    
+</body>
+</html>
