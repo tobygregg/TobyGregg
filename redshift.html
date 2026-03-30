@@ -29,15 +29,15 @@
   <section class="hero" id="home">
 
     <!-- Layer 0 — Video background -->
-    <div class="hero-bg" id="heroBg">
-      <div class="hero-bg__placeholder" id="bgPlaceholder"></div>
-      <video
-        class="hero-bg__video"
-        id="bgVideo"
-        autoplay muted loop playsinline
-        style="display:none"
-      ></video>
-    </div>
+    <video
+      class="hero-bg__video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="preview.mp4" type="video/mp4" />
+    </video>
 
     <!-- Layer 1 — Dark cinematic overlay (sits over video, under content) -->
     <div class="hero-overlay" aria-hidden="true">
@@ -97,17 +97,6 @@
       </div>
 
     </div>
-
-    <!-- Video upload -->
-    <label class="video-upload-btn" for="videoInput" title="Upload background video">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="16 16 12 12 8 16"/>
-        <line x1="12" y1="12" x2="12" y2="21"/>
-        <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
-      </svg>
-      Upload Video BG
-    </label>
-    <input type="file" id="videoInput" accept="video/*" hidden />
 
     <!-- Scroll hint -->
     <div class="scroll-hint" aria-hidden="true">
