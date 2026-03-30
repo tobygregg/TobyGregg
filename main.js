@@ -72,36 +72,6 @@
 })();
 
 
-/* ──────────────────────────────────────────────────────────────
-   3. VIDEO BACKGROUND UPLOAD
-   User picks a local file → URL.createObjectURL → swap in.
-────────────────────────────────────────────────────────────── */
-(function initVideoUpload() {
-  const input       = document.getElementById('videoInput');
-  const video       = document.getElementById('bgVideo');
-  const placeholder = document.getElementById('bgPlaceholder');
-  if (!input || !video || !placeholder) return;
-
-  input.addEventListener('change', function () {
-    const file = this.files[0];
-    if (!file) return;
-
-    // Revoke previous object URL to avoid memory leaks
-    if (video._objectURL) URL.revokeObjectURL(video._objectURL);
-
-    const url = URL.createObjectURL(file);
-    video._objectURL = url;
-
-    video.src = url;
-    video.style.display = 'block';
-    placeholder.style.display = 'none';
-
-    // Fade video in smoothly
-    video.style.opacity = '0';
-    video.style.transition = 'opacity 1s ease';
-    video.addEventListener('canplay', () => { video.style.opacity = '1'; }, { once: true });
-  });
-})();
 
 
 /* ──────────────────────────────────────────────────────────────
