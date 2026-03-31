@@ -1,195 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REDSHIFT</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@300;400;600;700&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REDSHIFT</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ░░ CURSOR ░░ -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursorTrail"></div>
+<div class="transition" id="transition">
+  <div class="slash"></div>
+  <div class="glitch"></div>
+</div>
 
-  <!-- ░░ NAV ░░ -->
-  <header class="nav" id="nav">
-    <a href="#home" class="nav-logo">RED<span>SHIFT</span></a>
-    <nav class="nav-links" role="navigation">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#listen" class="nav-link">Listen</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-  </header>
+<header class="nav">
+  <div class="logo">RED<span>SHIFT</span></div>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="listen.html">Listen</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- ░░ HERO ░░ -->
-  <section class="hero" id="home">
+<section class="hero">
+  <video autoplay muted loop playsinline class="video">
+    <source src="https://pub-d4eddf5af3ec4b0b8e55754cfa58ec39.r2.dev/PREVIEWSHORT.mp4" type="video/mp4">
+  </video>
 
-    <!-- Layer 0 — Video background -->
-    <video autoplay muted loop playsinline class="hero-bg__video">
-      <source src="https://pub-d4eddf5af3ec4b0b8e55754cfa58ec39.r2.dev/PREVIEWSHORT.mp4" type="video/mp4" />
-    </video>
+  <div class="overlay"></div>
 
-    <!-- Layer 1 — Dark cinematic overlay (sits over video, under content) -->
-    <div class="hero-overlay" aria-hidden="true">
-      <div class="hero-overlay__dark"></div>
-      <div class="hero-overlay__gradient"></div>
-      <div class="hero-overlay__vignette"></div>
-      <div class="hero-overlay__grain"></div>
-      <div class="hero-overlay__scanlines"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="title">
+        <span class="line">Listen to our new cover</span>
+        <span class="skyfall">SKYFALL</span>
+      </h1>
+      <a href="listen.html#skyfall" class="btn">LISTEN NOW</a>
     </div>
 
-    <!-- Layer 2 — Content -->
-    <div class="hero-content">
-
-      <div class="hero-left">
-        <p class="hero-eyebrow">
-          <span class="eyebrow-line"></span>
-          New Single
-        </p>
-        <h1 class="hero-title">
-          <span class="hero-title__listen">Listen to</span>
-          <span class="hero-title__song">Skyfall</span>
-        </h1>
-        <p class="hero-body">
-          Raw energy. Relentless sound.<br>
-          We build pressure until something breaks.
-        </p>
-        <div class="hero-actions">
-          <a href="#listen" class="btn btn--primary">
-            <span>Stream Now</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="#about" class="btn btn--ghost">Our Story</a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <a href="#listen" class="album-card" id="albumCard" aria-label="Listen to Skyfall">
-          <div class="album-card__border-glow"></div>
-          <img
-            class="album-card__img"
-            id="albumImg"
-            src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=700&q=80"
-            alt="Skyfall — Redshift album art"
-          />
-          <div class="album-card__overlay">
-            <div class="album-card__tag">Latest Single</div>
-            <div class="album-card__title">Skyfall</div>
-          </div>
-          <div class="album-card__play" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="white">
-              <path d="M7 4.5l12 6.5-12 6.5V4.5z"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-
+    <div class="hero-img">
+      <img src="band.jpg">
     </div>
+  </div>
+</section>
 
-    <!-- Scroll hint -->
-    <div class="scroll-hint" aria-hidden="true">
-      <div class="scroll-hint__line"></div>
-      <span>Scroll</span>
-    </div>
+<section class="grid">
+  <a href="about.html" class="card">
+    <img src="about.jpg">
+    <div><h2>ABOUT</h2><p>Who we are</p></div>
+  </a>
 
-  </section>
+  <a href="listen.html" class="card">
+    <img src="listen.jpg">
+    <div><h2>LISTEN</h2><p>Our music</p></div>
+  </a>
 
-  <!-- ░░ ABOUT ░░ -->
-  <section class="section" id="about">
-    <div class="section__inner about-grid">
-      <div class="about-left" data-reveal>
-        <p class="section-label">Who We Are</p>
-        <h2 class="section-heading">
-          Born from<br>
-          <em>noise</em><br>
-          and fury.
-        </h2>
-      </div>
-      <div class="about-right" data-reveal data-reveal-delay="150">
-        <p>Redshift is a four-piece rock outfit forged in rehearsal rooms and late nights. We don't do subtle. Every riff is a statement, every drop is an earthquake.</p>
-        <p>With roots in everything from hard rock to post-punk, we carve out a sound that hits first and asks questions never. Skyfall is just the beginning.</p>
-      </div>
-    </div>
-  </section>
+  <a href="contact.html" class="card">
+    <img src="contact.jpg">
+    <div><h2>CONTACT</h2><p>Get in touch</p></div>
+  </a>
+</section>
 
-  <!-- ░░ LISTEN ░░ -->
-  <section class="section section--dark" id="listen">
-    <div class="section__inner">
-      <p class="section-label" data-reveal>Discography</p>
-      <h2 class="section-heading" data-reveal>Our Sound</h2>
-      <div class="tracks" data-reveal>
-        <div class="track">
-          <span class="track__num">01</span>
-          <div class="track__info">
-            <span class="track__name">Skyfall</span>
-            <span class="track__meta">Single · 2024</span>
-          </div>
-          <span class="track__dur">3:47</span>
-        </div>
-        <div class="track track--dim">
-          <span class="track__num">02</span>
-          <div class="track__info">
-            <span class="track__name">Coming Soon</span>
-            <span class="track__meta">Unreleased</span>
-          </div>
-          <span class="track__dur">—</span>
-        </div>
-        <div class="track track--dim">
-          <span class="track__num">03</span>
-          <div class="track__info">
-            <span class="track__name">Coming Soon</span>
-            <span class="track__meta">Unreleased</span>
-          </div>
-          <span class="track__dur">—</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ CONTACT ░░ -->
-  <section class="section" id="contact">
-    <div class="section__inner contact-grid">
-      <div class="contact-left" data-reveal>
-        <p class="section-label">Get In Touch</p>
-        <h2 class="section-heading">
-          Book.<br>
-          <em>Collaborate.</em><br>
-          Connect.
-        </h2>
-        <p class="contact-sub">Bookings, press, collabs — drop us a message. We don't bite. Much.</p>
-      </div>
-      <form class="contact-form" data-reveal data-reveal-delay="150" onsubmit="return false;">
-        <div class="field">
-          <input type="text" placeholder="Your Name" autocomplete="name" />
-        </div>
-        <div class="field">
-          <input type="email" placeholder="Email Address" autocomplete="email" />
-        </div>
-        <div class="field">
-          <textarea placeholder="Your message..." rows="5"></textarea>
-        </div>
-        <button class="btn btn--primary" type="submit">
-          <span>Send It</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ░░ FOOTER ░░ -->
-  <footer class="footer">
-    <span class="footer__logo">RED<span>SHIFT</span></span>
-    <span class="footer__copy">© 2026 Redshift. All rights reserved.</span>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
 </html>
