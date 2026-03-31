@@ -186,7 +186,7 @@ body.cursor-hover .cursor-trail { width: 52px; height: 52px; border-color: rgba(
 .hero-overlay__dark {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* Directional gradient to push eye to left content */
