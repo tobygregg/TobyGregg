@@ -2,138 +2,29 @@
    REDSHIFT — main.js
    ============================================================ */
 
-'use strict';
+<script>
+const t = document.getElementById('transition');
 
-/* ──────────────────────────────────────────────────────────────
-   1. CUSTOM CURSOR
-   Dot follows instantly; ring lags behind with lerp for feel.
-────────────────────────────────────────────────────────────── */
-(function initCursor() {
-  const dot   = document.getElementById('cursor');
-  const ring  = document.getElementById('cursorTrail');
-  if (!dot || !ring) return;
-
-  let mx = -100, my = -100; // mouse position
-  let rx = -100, ry = -100; // ring (lerped) position
-  const LERP = 0.11;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-  });
-
-  function tick() {
-    // dot snaps
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-    // ring lerps
-    rx += (mx - rx) * LERP;
-    ry += (my - ry) * LERP;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(tick);
-  }
-  tick();
-
-  // Expand on interactive elements
-  const interactives = 'a, button, label, .track, input, textarea';
-  document.querySelectorAll(interactives).forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-
-  // Hide when leaving window
-  document.addEventListener('mouseleave', () => {
-    dot.style.opacity  = '0';
-    ring.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    dot.style.opacity  = '1';
-    ring.style.opacity = '1';
-  });
-})();
-
-
-/* ──────────────────────────────────────────────────────────────
-   2. NAV — add .nav--scrolled class once user scrolls
-────────────────────────────────────────────────────────────── */
-(function initNav() {
-  const nav = document.getElementById('nav');
-  if (!nav) return;
-
-  const THRESHOLD = 40;
-
-  function update() {
-    nav.classList.toggle('nav--scrolled', window.scrollY > THRESHOLD);
-  }
-
-  window.addEventListener('scroll', update, { passive: true });
-  update(); // run on load in case page is already scrolled
-})();
-
-
-
-
-/* ──────────────────────────────────────────────────────────────
-   4. SCROLL REVEAL
-   Elements with [data-reveal] fade + slide in when they enter
-   the viewport. Respects prefers-reduced-motion.
-────────────────────────────────────────────────────────────── */
-(function initReveal() {
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const targets = document.querySelectorAll('[data-reveal]');
-  if (!targets.length) return;
-
-  if (prefersReduced) {
-    // Skip animation, just show everything
-    targets.forEach(el => el.classList.add('is-visible'));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target); // fire once
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-  );
-
-  targets.forEach(el => observer.observe(el));
-})();
-
-
-/* ──────────────────────────────────────────────────────────────
-   5. SMOOTH SCROLL for in-page anchor links
-   (Backs up CSS scroll-behavior for browsers that ignore it)
-────────────────────────────────────────────────────────────── */
-(function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const id = this.getAttribute('href');
-      if (id === '#') return;
-      const target = document.querySelector(id);
-      if (!target) return;
+document.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    if(a.href.includes('.html')){
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+      t.classList.add('active');
+      setTimeout(()=>location=a.href,700);
+    }
   });
-})();
+});
 
+window.onload=()=>{
+  setTimeout(()=>t.classList.remove('active'),100);
+}
 
-/* ──────────────────────────────────────────────────────────────
-   6. TRACK ROW — play icon hover glow (subtle red pulse)
-────────────────────────────────────────────────────────────── */
-(function initTrackHover() {
-  document.querySelectorAll('.track:not(.track--dim)').forEach(track => {
-    track.addEventListener('mouseenter', () => {
-      track.style.setProperty('--track-glow', '1');
-    });
-    track.addEventListener('mouseleave', () => {
-      track.style.setProperty('--track-glow', '0');
-    });
-  });
-})();
+// subtle mouse parallax
+const hero = document.querySelector('.hero');
+hero?.addEventListener('mousemove',e=>{
+  const x = (e.clientX / window.innerWidth - 0.5) * 10;
+  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+  hero.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
+
