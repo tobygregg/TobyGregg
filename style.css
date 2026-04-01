@@ -207,7 +207,7 @@ nav.scrolled {
 /* ── Photo frame ── */
 .hero-img-wrap {
   position: relative; flex-shrink: 0;
-  width: 310px; height: 390px;
+  width: 400px; height: 400px;
   opacity: 0; transform: translateY(24px) scale(0.97);
   animation: hero-in 0.85s 0.1s var(--ease) forwards;
 }
