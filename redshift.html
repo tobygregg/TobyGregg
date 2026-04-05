@@ -20,45 +20,51 @@
   ═══════════════════════════════════════ -->
   <nav id="main-nav">
     <div class="nav-logo" onclick="goto('home')">RED<em>SHIFT</em></div>
+
+    <!-- Desktop links -->
     <ul class="nav-links">
       <li><a data-page="home"    class="active" onclick="goto('home')">Home</a></li>
       <li><a data-page="about"             onclick="goto('about')">About</a></li>
       <li><a data-page="listen"            onclick="goto('listen')">Listen</a></li>
       <li><a data-page="contact"           onclick="goto('contact')">Contact</a></li>
     </ul>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Full-screen mobile menu -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a class="nav-mobile-link active" data-page="home"    onclick="goto('home')">Home</a>
+    <div class="nav-mobile-divider"></div>
+    <a class="nav-mobile-link"        data-page="about"   onclick="goto('about')">About</a>
+    <div class="nav-mobile-divider"></div>
+    <a class="nav-mobile-link"        data-page="listen"  onclick="goto('listen')">Listen</a>
+    <div class="nav-mobile-divider"></div>
+    <a class="nav-mobile-link"        data-page="contact" onclick="goto('contact')">Contact</a>
+  </div>
 
   <!-- ═══════════════════════════════════════
        HOME PAGE
   ═══════════════════════════════════════ -->
   <div id="page-home" class="page active">
 
-    <!-- Video Hero -->
     <section class="video-hero">
       <video class="video-bg" autoplay muted loop playsinline>
-        <!--
-          ╔════════════════════════════════════════════╗
-          ║  Replace with your Cloudflare R2 video URL  ║
-          ╚════════════════════════════════════════════╝
-        -->
         <source src="https://pub-d4eddf5af3ec4b0b8e55754cfa58ec39.r2.dev/PREVIEWSHORT.mp4" type="video/mp4">
       </video>
       <div class="video-mask"></div>
 
       <div class="hero-inner">
 
-        <!-- LEFT: Photo -->
         <div class="hero-img-wrap" id="heroImgWrap">
           <div class="hero-img-frame">
-            <!--
-              Once you have a photo, replace this span with:
-              <img src="your-band-photo.jpg" alt="Redshift">
-            -->
             <img src="Skyfall.jpg" alt="Skyfall">
           </div>
         </div>
 
-        <!-- RIGHT: Text -->
         <div class="hero-text">
           <div class="hero-badge">
             <span class="badge-dot"></span>
@@ -85,7 +91,6 @@
       </div>
     </section>
 
-    <!-- Explore Cards -->
     <section class="section">
       <div class="cards-header reveal">
         <p class="section-kicker">Explore</p>
@@ -94,7 +99,6 @@
 
       <div class="cards-grid">
 
-        <!-- About -->
         <div class="card tilt reveal d1" onclick="goto('about')">
           <div class="card-thumb card-thumb-a">
             <svg class="card-icon" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
@@ -105,14 +109,11 @@
           <div class="card-body">
             <p class="card-kicker">The Band</p>
             <h3 class="card-title">About Us</h3>
-            <p class="card-desc">
-              Find out who we are and what we do.
-            </p>
+            <p class="card-desc">Find out who we are and what we do.</p>
             <button class="btn btn-ghost magnetic">About Us &rarr;</button>
           </div>
         </div>
 
-        <!-- Listen -->
         <div class="card tilt reveal d2" onclick="goto('listen')">
           <div class="card-thumb card-thumb-b">
             <svg class="card-icon" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
@@ -124,14 +125,11 @@
           <div class="card-body">
             <p class="card-kicker">Music</p>
             <h3 class="card-title">Listen</h3>
-            <p class="card-desc">
-              Find where to listen to our released music here.
-            </p>
+            <p class="card-desc">Find where to listen to our released music here.</p>
             <button class="btn btn-ghost magnetic">Stream Now &rarr;</button>
           </div>
         </div>
 
-        <!-- Contact -->
         <div class="card tilt reveal d3" onclick="goto('contact')">
           <div class="card-thumb card-thumb-c">
             <svg class="card-icon" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
@@ -142,9 +140,7 @@
           <div class="card-body">
             <p class="card-kicker">Get In Touch</p>
             <h3 class="card-title">Contact</h3>
-            <p class="card-desc">
-              Want to get in touch? Here is how.
-            </p>
+            <p class="card-desc">Want to get in touch? Here is how.</p>
             <button class="btn btn-ghost magnetic">Contact Us &rarr;</button>
           </div>
         </div>
@@ -188,9 +184,6 @@
         </p>
       </div>
       <div class="about-img-wrap reveal d1">
-        <!--
-          Replace with: <img src="band-photo.jpg" alt="Redshift">
-        -->
         <img src="band-photo.jpg" alt="Redshift">
       </div>
     </div>
@@ -199,7 +192,7 @@
       <div class="reveal">
         <p class="section-kicker">The People</p>
         <h2 class="section-title">Meet the Band</h2>
-        <p>While these are our main instruments, we love to swap around and play different parts.</p>
+        <p style="color:var(--text-dim);font-size:0.9rem;margin-top:8px">While these are our main instruments, we love to swap around and play different parts.</p>
       </div>
       <div class="members-grid">
 
@@ -264,14 +257,14 @@
     <section id="skyfall" class="reveal">
       <div class="skyfall-grid">
 
-        <!-- Artwork -->
+        <!-- Col 1: Artwork -->
         <div class="skyfall-artwork">
           <img src="Skyfall.jpg" alt="Skyfall" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;border-radius:14px;">
-          <div class="skyfall-art-name" style="position:relative;z-index:1;"> </div>
-          <div class="skyfall-art-sub" style="position:relative;z-index:1;"> </div>
+          <div class="skyfall-art-name" style="position:relative;z-index:2;"> </div>
+          <div class="skyfall-art-sub"  style="position:relative;z-index:2;"> </div>
         </div>
 
-        <!-- Info -->
+        <!-- Col 2: Info + player -->
         <div class="skyfall-info">
           <p class="skyfall-kicker">Featured Cover</p>
           <h2>SKYFALL</h2>
@@ -282,16 +275,14 @@
             also adding massive rock energy. This is definetly one of our favourites to play for a crowd.
           </p>
 
-          <!-- Glass audio player -->
           <div class="player" style="position:relative;">
             <button class="play-btn magnetic" id="playBtn">
               <svg viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
             </button>
-          
+
             <!-- Streaming popup -->
             <div class="stream-popup" id="streamPopup">
-              <!-- Spotify -->
-              <a href="https://open.spotify.com/YOUR_LINK" target="_blank" class="stream-popup-btn" id="popupClose">
+              <a href="https://open.spotify.com/YOUR_LINK" target="_blank" class="stream-popup-btn">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="12" fill="#1DB954"/>
                   <path d="M7 15.5c2.8-1.7 6.2-1.9 9.2-.6" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
@@ -301,7 +292,6 @@
                 <span class="stream-popup-label">Spotify</span>
               </a>
               <div class="stream-popup-divider"></div>
-              <!-- Apple Music -->
               <a href="https://music.apple.com/YOUR_LINK" target="_blank" class="stream-popup-btn">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="12" fill="#fc3c44"/>
@@ -312,7 +302,6 @@
                 <span class="stream-popup-label">Apple Music</span>
               </a>
               <div class="stream-popup-divider"></div>
-              <!-- YouTube -->
               <a href="https://youtube.com/YOUR_LINK" target="_blank" class="stream-popup-btn">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="12" fill="#FF0000"/>
@@ -321,7 +310,7 @@
                 <span class="stream-popup-label">YouTube</span>
               </a>
             </div>
-          
+
             <div class="player-meta">
               <div class="player-name">SKYFALL</div>
               <div class="player-sub">Redshift &mdash; Cover</div>
@@ -336,12 +325,102 @@
           </div>
 
           <div class="stream-btns">
-            <button class="stream-btn">Spotify</button>
-            <button class="stream-btn">Apple Music</button>
-            <button class="stream-btn">YouTube</button>
-            <button class="stream-btn">Amazon Music</button>
+            <a href="https://open.spotify.com/YOUR_LINK"    target="_blank" class="stream-btn">Spotify</a>
+            <a href="https://music.apple.com/YOUR_LINK"     target="_blank" class="stream-btn">Apple Music</a>
+            <a href="https://youtube.com/YOUR_LINK"         target="_blank" class="stream-btn">YouTube</a>
+            <a href="https://music.amazon.com/YOUR_LINK"    target="_blank" class="stream-btn">Amazon Music</a>
           </div>
+
+          <!-- Mobile: music video button (shown inline below player on mobile) -->
+          <a href="https://youtube.com/YOUR_MUSIC_VIDEO_LINK" target="_blank"
+             class="mv-bubble mv-bubble-mobile"
+             style="display:none;">
+            <div class="mv-play-ring">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <polygon points="5,3 19,12 5,21"/>
+              </svg>
+            </div>
+            <span class="mv-label">Watch our<br>Music Video</span>
+          </a>
         </div>
+
+        <!-- Col 3: Music Video Bubble (desktop/tablet) -->
+        <a href="https://youtube.com/YOUR_MUSIC_VIDEO_LINK" target="_blank" class="mv-bubble">
+          <div class="mv-play-ring">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </div>
+          <span class="mv-label">Watch our<br>Music Video</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── Listen to our music — Platform buttons ── -->
+    <section class="listen-platforms reveal">
+      <div class="listen-platforms-header">
+        <p class="section-kicker">Stream Now</p>
+        <h2 class="section-title listen-platforms-title">Listen to our Music</h2>
+        <p class="listen-platforms-sub">Find us on all major streaming platforms</p>
+      </div>
+
+      <div class="platforms-grid">
+
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/YOUR_LINK" target="_blank" class="platform-btn spotify">
+          <div class="platform-icon spotify-ico">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#1DB954"/>
+              <path d="M7 15.5c2.8-1.7 6.2-1.9 9.2-.6" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M6.5 12.5c3.5-2 7.8-2.2 11.5-.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M6 9.5c4.2-2.3 9.3-2.5 13.5-.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="platform-info">
+            <div class="platform-label">Listen on</div>
+            <div class="platform-name">Spotify</div>
+          </div>
+          <svg class="platform-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+
+        <!-- Apple Music -->
+        <a href="https://music.apple.com/YOUR_LINK" target="_blank" class="platform-btn apple">
+          <div class="platform-icon apple-ico">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#fc3c44"/>
+              <path d="M9.5 16.5V9l7-1.5v2L11 11v5.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9.5" cy="16.5" r="1.5" fill="white"/>
+              <circle cx="16.5" cy="15.5" r="1.5" fill="white"/>
+            </svg>
+          </div>
+          <div class="platform-info">
+            <div class="platform-label">Listen on</div>
+            <div class="platform-name">Apple Music</div>
+          </div>
+          <svg class="platform-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://youtube.com/YOUR_LINK" target="_blank" class="platform-btn youtube">
+          <div class="platform-icon youtube-ico">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="12" fill="#FF0000"/>
+              <path d="M17.5 12c0 .4-.2.7-.5.9l-7 4.2c-.6.4-1.5 0-1.5-.9V7.8c0-.9.9-1.3 1.5-.9l7 4.2c.3.2.5.5.5.9z" fill="white"/>
+            </svg>
+          </div>
+          <div class="platform-info">
+            <div class="platform-label">Watch on</div>
+            <div class="platform-name">YouTube</div>
+          </div>
+          <svg class="platform-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
 
       </div>
     </section>
@@ -409,7 +488,7 @@
 
     <div class="contact-grid">
 
-      <!-- Left: Info + Socials -->
+      <!-- Left: Socials -->
       <div class="reveal">
         <div style="margin-bottom:24px">
           <p class="section-kicker">Find Us</p>
@@ -420,7 +499,12 @@
         </p>
         <div class="social-list">
 
-          <a href="#" class="social-row">
+          <!--
+            ╔═══════════════════════════════════════════╗
+            ║  Replace href="#" with your actual links   ║
+            ╚═══════════════════════════════════════════╝
+          -->
+          <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="social-row">
             <div class="social-ico">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -432,7 +516,7 @@
             <span class="social-hd">@redshiftband</span>
           </a>
 
-          <a href="#" class="social-row">
+          <a href="https://tiktok.com/@YOUR_HANDLE" target="_blank" class="social-row">
             <div class="social-ico">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 18V5l12-2v13"/>
@@ -444,7 +528,7 @@
             <span class="social-hd">@redshiftband</span>
           </a>
 
-          <a href="#" class="social-row">
+          <a href="https://open.spotify.com/YOUR_LINK" target="_blank" class="social-row">
             <div class="social-ico">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"/>
@@ -456,7 +540,7 @@
             <span class="social-hd">Redshift</span>
           </a>
 
-          <a href="#" class="social-row">
+          <a href="https://youtube.com/@YOUR_HANDLE" target="_blank" class="social-row">
             <div class="social-ico">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polygon points="5 3 19 12 5 21 5 3"/>
@@ -469,37 +553,48 @@
         </div>
       </div>
 
-      <!-- Right: Form -->
+      <!-- Right: Formspree form -->
       <div class="reveal d1">
         <div style="margin-bottom:28px">
           <p class="section-kicker">Message</p>
           <h2 class="section-title">Say Hello</h2>
         </div>
 
-        <div class="form-grp">
-          <label class="form-lbl">Name</label>
-          <input class="form-inp" type="text" placeholder="Your name">
-        </div>
-        <div class="form-grp">
-          <label class="form-lbl">Email</label>
-          <input class="form-inp" type="email" placeholder="you@email.com">
-        </div>
-        <div class="form-grp">
-          <label class="form-lbl">Subject</label>
-          <input class="form-inp" type="text" placeholder="Booking / Collab / Other">
-        </div>
-        <div class="form-grp">
-          <label class="form-lbl">Message</label>
-          <textarea class="form-txta" placeholder="What's on your mind..."></textarea>
-        </div>
+        <!--
+          ╔═══════════════════════════════════════════════════════════════╗
+          ║  1. Go to https://formspree.io and create a free account.     ║
+          ║  2. Create a new form and copy your form ID (looks like       ║
+          ║     "xpwzabcd"). Replace YOUR_FORMSPREE_ID below.             ║
+          ╚═══════════════════════════════════════════════════════════════╝
+        -->
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
 
-        <button class="btn btn-filled magnetic" style="margin-top:6px">
-          Send Message
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </button>
+          <div class="form-grp">
+            <label class="form-lbl" for="f-name">Name</label>
+            <input class="form-inp" id="f-name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-grp">
+            <label class="form-lbl" for="f-email">Email</label>
+            <input class="form-inp" id="f-email" name="email" type="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-grp">
+            <label class="form-lbl" for="f-subject">Subject</label>
+            <input class="form-inp" id="f-subject" name="subject" type="text" placeholder="Booking / Collab / Other">
+          </div>
+          <div class="form-grp">
+            <label class="form-lbl" for="f-msg">Message</label>
+            <textarea class="form-txta" id="f-msg" name="message" placeholder="What's on your mind..." required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit-btn">
+            Send Message
+            <svg style="width:15px;height:15px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+
+        </form>
       </div>
 
     </div>
