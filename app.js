@@ -294,7 +294,6 @@ function bindAudio() {
       updatePlayer();
     });
   }
-}
 
 function updatePlayer() {
   const fill = document.getElementById('progressFill');
