@@ -831,3 +831,61 @@ footer {
   .tracks-section, .contact-grid, footer
   { padding-left: 20px; padding-right: 20px; }
 }
+
+
+
+/* ── Streaming popup bubble ── */
+.stream-popup {
+  position: absolute;
+  left: 62px; top: 50%;
+  transform: translateY(-50%) scale(0.88);
+  transform-origin: left center;
+  background: rgba(18, 18, 26, 0.72);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 10px 8px;
+  display: flex; gap: 8px; align-items: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s var(--ease), transform 0.3s var(--ease-spring);
+  z-index: 10; white-space: nowrap;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+}
+.stream-popup.visible {
+  opacity: 1; pointer-events: all;
+  transform: translateY(-50%) scale(1);
+}
+/* small arrow pointing left back to the button */
+.stream-popup::before {
+  content: '';
+  position: absolute; left: -6px; top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px; height: 10px;
+  background: rgba(18,18,26,0.85);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.stream-popup-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.04); cursor: pointer; text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s var(--ease-spring);
+  color: var(--text);
+}
+.stream-popup-btn:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+.stream-popup-btn svg { display: block; }
+.stream-popup-label {
+  font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--text-dim);
+  text-transform: uppercase;
+}
+/* divider between buttons */
+.stream-popup-divider {
+  width: 1px; height: 36px;
+  background: rgba(255,255,255,0.07); flex-shrink: 0;
+}
