@@ -267,30 +267,25 @@ const TOTAL  = 287; /* 4:47 */
 
 function bindAudio() {
   const playBtn     = document.getElementById('playBtn');
-  const progressBar = document.getElementById('progressBar');
+  const popup       = document.getElementById('streamPopup');
+  if (!playBtn || !popup) return;
 
-  if (!playBtn) return;
+  let popupOpen = false;
 
-  playBtn.addEventListener('click', () => {
-    playing = !playing;
+  playBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popupOpen = !popupOpen;
+    popup.classList.toggle('visible', popupOpen);
+  });
 
-    if (playing) {
-      playBtn.innerHTML = pauseIcon();
-      ticker = setInterval(() => {
-        progress++;
-        if (progress >= TOTAL) {
-          progress = 0;
-          playing = false;
-          clearInterval(ticker);
-          playBtn.innerHTML = playIcon();
-        }
-        updatePlayer();
-      }, 1000);
-    } else {
-      playBtn.innerHTML = playIcon();
-      clearInterval(ticker);
+  // close if you click anywhere else
+  document.addEventListener('click', (e) => {
+    if (popupOpen && !popup.contains(e.target) && e.target !== playBtn) {
+      popupOpen = false;
+      popup.classList.remove('visible');
     }
   });
+}
 
   if (progressBar) {
     progressBar.addEventListener('click', e => {
