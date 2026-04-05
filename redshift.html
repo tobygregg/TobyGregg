@@ -267,8 +267,8 @@
         <!-- Artwork -->
         <div class="skyfall-artwork">
           <img src="Skyfall.jpg" alt="Skyfall" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;border-radius:14px;">
-          <div class="skyfall-art-name" style="position:relative;z-index:1;">SKYFALL</div>
-          <div class="skyfall-art-sub" style="position:relative;z-index:1;">Redshift &mdash; Cover</div>
+          <div class="skyfall-art-name" style="position:relative;z-index:1;"> </div>
+          <div class="skyfall-art-sub" style="position:relative;z-index:1;"> </div>
         </div>
 
         <!-- Info -->
@@ -283,10 +283,45 @@
           </p>
 
           <!-- Glass audio player -->
-          <div class="player">
+          <div class="player" style="position:relative;">
             <button class="play-btn magnetic" id="playBtn">
               <svg viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
             </button>
+          
+            <!-- Streaming popup -->
+            <div class="stream-popup" id="streamPopup">
+              <!-- Spotify -->
+              <a href="https://open.spotify.com/YOUR_LINK" target="_blank" class="stream-popup-btn" id="popupClose">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="12" fill="#1DB954"/>
+                  <path d="M7 15.5c2.8-1.7 6.2-1.9 9.2-.6" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+                  <path d="M6.5 12.5c3.5-2 7.8-2.2 11.5-.5" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+                  <path d="M6 9.5c4.2-2.3 9.3-2.5 13.5-.5" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+                <span class="stream-popup-label">Spotify</span>
+              </a>
+              <div class="stream-popup-divider"></div>
+              <!-- Apple Music -->
+              <a href="https://music.apple.com/YOUR_LINK" target="_blank" class="stream-popup-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="12" fill="#fc3c44"/>
+                  <path d="M9.5 16.5V9l7-1.5v2L11 11v5.5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="9.5" cy="16.5" r="1.5" fill="white"/>
+                  <circle cx="16.5" cy="15.5" r="1.5" fill="white"/>
+                </svg>
+                <span class="stream-popup-label">Apple Music</span>
+              </a>
+              <div class="stream-popup-divider"></div>
+              <!-- YouTube -->
+              <a href="https://youtube.com/YOUR_LINK" target="_blank" class="stream-popup-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="12" fill="#FF0000"/>
+                  <path d="M17.5 12c0 .4-.2.7-.5.9l-7 4.2c-.6.4-1.5 0-1.5-.9V7.8c0-.9.9-1.3 1.5-.9l7 4.2c.3.2.5.5.5.9z" fill="white"/>
+                </svg>
+                <span class="stream-popup-label">YouTube</span>
+              </a>
+            </div>
+          
             <div class="player-meta">
               <div class="player-name">SKYFALL</div>
               <div class="player-sub">Redshift &mdash; Cover</div>
@@ -295,7 +330,7 @@
               </div>
               <div class="player-times">
                 <span id="currentTime">0:00</span>
-                <span>3:46</span>
+                <span>3:45</span>
               </div>
             </div>
           </div>
