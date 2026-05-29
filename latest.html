@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latest — Toby Gregg</title>
+  <meta name="description" content="Latest posts by Toby Gregg — engineering, music, videography, studies and more.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EKV305K9L"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5EKV305K9L');</script>
+</head>
+<body data-page="latest">
+
+<div id="nav-placeholder"></div>
+
+<!-- ═══════════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════════════ -->
+<div class="latest-hero">
+  <p class="section-label reveal">Posts</p>
+  <h1 class="section-title reveal delay-1">
+    Latest from<br><span class="grad-text">Toby Gregg</span>
+  </h1>
+  <p class="section-subtitle reveal delay-2">
+    Updates on engineering projects, music, videography, studies and whatever else is on my mind.
+  </p>
+
+  <!-- Filter bar -->
+  <div class="filter-bar reveal delay-3">
+    <button class="filter-btn active" data-tag="All">All</button>
+    <button class="filter-btn" data-tag="Engineering">
+      <i class="fas fa-microchip" style="font-size:0.75rem;margin-right:0.35rem"></i>Engineering
+    </button>
+    <button class="filter-btn" data-tag="Music">
+      <i class="fas fa-music" style="font-size:0.75rem;margin-right:0.35rem"></i>Music
+    </button>
+    <button class="filter-btn" data-tag="Videography">
+      <i class="fas fa-film" style="font-size:0.75rem;margin-right:0.35rem"></i>Videography
+    </button>
+    <button class="filter-btn" data-tag="Studies">
+      <i class="fas fa-graduation-cap" style="font-size:0.75rem;margin-right:0.35rem"></i>Studies
+    </button>
+    <button class="filter-btn" data-tag="Other">Other</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     POSTS
+══════════════════════════════════════════════════════ -->
+<div class="posts-container">
+  <div class="posts-grid" id="posts-grid">
+    <!-- Posts injected by latest.js -->
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/components.js"></script>
+<script src="js/latest.js"></script>
+</body>
+</html>
