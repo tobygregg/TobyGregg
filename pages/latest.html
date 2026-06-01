@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Latest — Toby Gregg</title>
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/latest.css"/>
+</head>
+<body>
+<div id="nav-root"></div>
+<header class="page-header">
+  <div class="container">
+    <div class="section-label reveal">Updates</div>
+    <h1 class="page-title reveal delay-1"><span class="accent">Latest</span><br>Posts.</h1>
+    <p class="page-subtitle reveal delay-2">Engineering builds, music, film projects and everything in between.</p>
+  </div>
+</header>
+<div class="filter-bar" id="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-tab active" data-tag="all">All</button>
+        <button class="filter-tab" data-tag="engineering">Engineering</button>
+        <button class="filter-tab" data-tag="music">Music</button>
+        <button class="filter-tab" data-tag="videography">Videography</button>
+        <button class="filter-tab" data-tag="studies">Studies</button>
+        <button class="filter-tab" data-tag="other">Other</button>
+      </div>
+      <div class="filter-count" id="filter-count"></div>
+    </div>
+  </div>
+</div>
+<main class="posts-main">
+  <div class="container">
+    <div id="posts-grid" class="posts-grid">
+      <div class="posts-loading">
+        <div class="loading-dots"><span></span><span></span><span></span></div>
+        <span>Loading posts…</span>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="post-modal" id="post-modal" aria-hidden="true">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-panel" id="modal-panel">
+    <div class="modal-header">
+      <div class="modal-meta">
+        <span id="modal-tag"></span>
+        <span class="modal-date" id="modal-date"></span>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-share" id="modal-share" title="Copy link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+        <button class="modal-close" id="modal-close" title="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <h2 class="modal-title" id="modal-title"></h2>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+</div>
+<div class="share-toast" id="share-toast">Link copied!</div>
+<div id="footer-root"></div>
+<script src="../js/components.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/latest.js"></script>
+</body>
+</html>
