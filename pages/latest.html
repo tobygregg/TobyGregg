@@ -8,14 +8,29 @@
   <link rel="stylesheet" href="../css/latest.css"/>
 </head>
 <body>
+<div id="preloader">
+  <div class="pl-name"><span>Latest.</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar"></div></div>
+  <div class="pl-pct">0%</div>
+</div>
+<div id="page-transition">
+  <div class="pt-col"></div><div class="pt-col"></div><div class="pt-col"></div>
+  <div class="pt-col"></div><div class="pt-col"></div>
+</div>
 <div id="nav-root"></div>
+
 <header class="page-header">
   <div class="container">
-    <div class="section-label reveal">Updates</div>
-    <h1 class="page-title reveal delay-1"><span class="accent">Latest</span><br>Posts.</h1>
-    <p class="page-subtitle reveal delay-2">Engineering builds, music, film projects and everything in between.</p>
+    <div class="ph-inner">
+      <div class="section-label reveal">Updates</div>
+      <h1 class="page-title reveal d1">Latest<br>Posts.</h1>
+      <p class="page-subtitle reveal d3">Engineering builds, music, film projects and everything in between.</p>
+    </div>
+    <!-- big decorative number -->
+    <div class="ph-deco" aria-hidden="true">Posts.</div>
   </div>
 </header>
+
 <div class="filter-bar" id="filter-bar">
   <div class="container">
     <div class="filter-inner">
@@ -31,6 +46,7 @@
     </div>
   </div>
 </div>
+
 <main class="posts-main">
   <div class="container">
     <div id="posts-grid" class="posts-grid">
@@ -41,14 +57,12 @@
     </div>
   </div>
 </main>
+
 <div class="post-modal" id="post-modal" aria-hidden="true">
   <div class="modal-backdrop" id="modal-backdrop"></div>
   <div class="modal-panel" id="modal-panel">
     <div class="modal-header">
-      <div class="modal-meta">
-        <span id="modal-tag"></span>
-        <span class="modal-date" id="modal-date"></span>
-      </div>
+      <div class="modal-meta"><span id="modal-tag"></span><span class="modal-date" id="modal-date"></span></div>
       <div class="modal-actions">
         <button class="modal-share" id="modal-share" title="Copy link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
@@ -63,6 +77,7 @@
   </div>
 </div>
 <div class="share-toast" id="share-toast">Link copied!</div>
+
 <div id="footer-root"></div>
 <script src="../js/components.js"></script>
 <script src="../js/global.js"></script>

@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -9,239 +9,272 @@
   <link rel="stylesheet" href="css/home.css"/>
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pl-name"><span>Toby Gregg.</span></div>
+  <div class="pl-bar-wrap"><div class="pl-bar"></div></div>
+  <div class="pl-pct">0%</div>
+</div>
+
+<!-- PAGE TRANSITION -->
+<div id="page-transition">
+  <div class="pt-col"></div><div class="pt-col"></div><div class="pt-col"></div>
+  <div class="pt-col"></div><div class="pt-col"></div>
+</div>
+
 <div id="nav-root"></div>
 
-<!-- HERO -->
-<section class="hero noise-bg" id="hero">
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
   <div class="hero-orbs">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
   </div>
-  <canvas id="hero-canvas"></canvas>
+
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span class="hero-tag">Guernsey, CI</span>
-      <span class="hero-divider"></span>
+      <span class="hero-rule"></span>
       <span class="hero-tag">Engineering · Music · Film</span>
     </div>
-    <h1 class="hero-name">
-      <span class="hero-line-1">TOBY</span>
-      <span class="hero-line-2" data-text="GREGG">GREGG</span>
-    </h1>
-    <p class="hero-sub">
-      Student. Robotics-bound. I build circuits, write songs,
-      and shoot film — whatever it takes to make something real.
-    </p>
-    <div class="hero-roles">
-      <span class="role-chip">A-Level Maths · Physics · CS</span>
-      <span class="role-chip">Guitar · Bass · Keys · Drums</span>
-      <span class="role-chip">ESP32 & Arduino</span>
-      <span class="role-chip">Lumix G85</span>
+
+    <div class="hero-headline">
+      <div class="hero-line hl-1"><span class="hl-word">TOBY</span></div>
+      <div class="hero-line hl-2">
+        <span class="hl-word hl-outline" data-text="GREGG">GREGG</span>
+        <span class="hl-serif">.</span>
+      </div>
     </div>
-    <div class="hero-cta">
-      <a href="#work" class="btn btn-white" data-mag>View Work</a>
-      <a href="pages/contact.html" class="btn btn-ghost" data-mag>Get in Touch</a>
-    </div>
-  </div>
-  <div class="hero-photo-wrap">
-    <div class="hero-photo-frame">
-      <!-- Add your portrait photo here -->
-      <img src="images/toby-main.jpg" alt="Toby Gregg" class="hero-photo"/>
-      <div class="hero-photo-glow"></div>
+
+    <div class="hero-sub-row">
+      <p class="hero-sub">
+        Student. Robotics-bound.<br>
+        I build circuits, write songs,<br>
+        shoot film — whatever it takes.
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-white" data-mag>View Work</a>
+        <a href="pages/contact.html" class="btn btn-ghost" data-mag>Get in Touch</a>
+      </div>
     </div>
   </div>
-  <div class="hero-scroll" data-parallax="0.05">
+
+  <div class="hero-chips">
+    <div class="hero-chip glass">A-Levels</div>
+    <div class="hero-chip glass">ESP32</div>
+    <div class="hero-chip glass">Lumix G85</div>
+    <div class="hero-chip glass">Guitar</div>
+    <div class="hero-chip glass">Robotics</div>
+  </div>
+
+  <div class="hero-photo-side">
+    <div class="hero-photo-frame card-tilt">
+      <div class="card-inner">
+        <img src="images/toby-main.jpg" alt="Toby Gregg" class="hero-photo"/>
+        <div class="hero-photo-overlay"></div>
+        <div class="card-shine"></div>
+      </div>
+    </div>
+    <div class="hero-photo-badge glass">
+      <span class="hpb-num">2026</span>
+      <span class="hpb-label">Year</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" data-par="0.04">
+    <div class="hsh-line"></div>
     <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
-<!-- MARQUEE -->
+<!-- ── MARQUEE ── -->
 <div class="marquee-strip">
   <div class="marquee-track">
-    <span>Robotics</span><span class="ms">·</span>
-    <span>Music Production</span><span class="ms">·</span>
-    <span>Videography</span><span class="ms">·</span>
-    <span>Web Dev</span><span class="ms">·</span>
-    <span>Electronics</span><span class="ms">·</span>
-    <span>Guitar</span><span class="ms">·</span>
-    <span>3D Printing</span><span class="ms">·</span>
-    <span>Guernsey</span><span class="ms">·</span>
-    <span>Robotics</span><span class="ms">·</span>
-    <span>Music Production</span><span class="ms">·</span>
-    <span>Videography</span><span class="ms">·</span>
-    <span>Web Dev</span><span class="ms">·</span>
-    <span>Electronics</span><span class="ms">·</span>
-    <span>Guitar</span><span class="ms">·</span>
-    <span>3D Printing</span><span class="ms">·</span>
-    <span>Guernsey</span><span class="ms">·</span>
+    <span>Robotics</span><i>×</i><span>Music Production</span><i>×</i>
+    <span>Videography</span><i>×</i><span>Web Dev</span><i>×</i>
+    <span>Electronics</span><i>×</i><span>Guitar</span><i>×</i>
+    <span>3D Printing</span><i>×</i><span>Guernsey</span><i>×</i>
+    <span>Robotics</span><i>×</i><span>Music Production</span><i>×</i>
+    <span>Videography</span><i>×</i><span>Web Dev</span><i>×</i>
+    <span>Electronics</span><i>×</i><span>Guitar</span><i>×</i>
+    <span>3D Printing</span><i>×</i><span>Guernsey</span><i>×</i>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about-section" id="about">
+<!-- ── STATEMENT ── -->
+<section class="statement-section">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-left">
-        <div class="section-label reveal">About</div>
-        <h2 class="section-heading reveal delay-1">
-          Building at the<br>
-          <span class="accent">intersection</span><br>
-          of everything.
-        </h2>
-        <p class="about-text reveal delay-2">
-          I'm Toby — a student in Guernsey with a relentless drive to create.
-          Whether it's designing circuits, writing songs, or shooting cinematic
-          film, I bring the same obsession for quality to every project.
-        </p>
-        <p class="about-text reveal delay-3">
-          Currently studying Maths, Physics and Computer Science at A-Level,
-          with plans to pursue Robotics Engineering at university. I thrive on
-          learning fast and building things that actually matter.
-        </p>
-        <div class="about-stats reveal delay-4">
-          <div class="stat">
-            <span class="stat-num" data-count="4" data-suffix="+">0+</span>
-            <span class="stat-label">Instruments</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">∞</span>
-            <span class="stat-label">Side Projects</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num" data-count="1">0</span>
-            <span class="stat-label">Island</span>
+    <!-- NO data-words on elements containing HTML tags — use reveal instead -->
+    <h2 class="statement-text reveal">
+      Building at the<br>
+      <em class="accent">intersection</em><br>
+      of everything.
+    </h2>
+    <div class="statement-sub reveal d3">
+      <p>Student in Guernsey. A-Levels in Maths, Physics &amp; CS.<br>Heading for Robotics Engineering. Relentlessly building.</p>
+      <a href="pages/contact.html" class="btn btn-ghost" data-mag>Say Hello →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT BENTO ── -->
+<section class="bento-section" id="about">
+  <div class="container">
+    <div class="section-label reveal">About</div>
+    <div class="bento-grid">
+
+      <div class="bento-card bento-photo card-tilt reveal">
+        <div class="card-inner">
+          <img src="images/toby-about.png" alt="Toby Gregg" class="bento-photo-img"/>
+          <div class="bento-photo-overlay"></div>
+          <div class="card-shine"></div>
+          <div class="bento-photo-label">
+            <span>Guernsey, CI</span>
           </div>
         </div>
-        <a href="https://linkedin.com/in/tobygregg" target="_blank" rel="noopener" class="li-btn reveal delay-5" data-mag>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          Connect on LinkedIn
+      </div>
+
+      <div class="bento-card bento-bio reveal d2">
+        <div class="section-label">Background</div>
+        <p class="bento-bio-text">I'm Toby — obsessively creative, perpetually building. Whether it's a circuit, a song, or a shot, I bring the same drive for quality to everything.</p>
+        <p class="bento-bio-text">Currently doing A-Levels in Maths, Physics and Computer Science, with plans to study Robotics Engineering at university.</p>
+        <a href="https://linkedin.com/in/tobygregg" target="_blank" rel="noopener" class="li-btn" data-mag>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
         </a>
       </div>
-      <div class="about-right reveal-right delay-2">
-        <div class="about-right-wrap">
-          <div class="about-img-stack">
-            <div class="about-img-main">
-              <!-- Replace with a casual/candid photo -->
-              <img src="images/toby-about.jpg" alt="Toby Gregg"/>
-            </div>
-            <div class="about-img-accent-block glass">
-              <span class="about-accent-num">A2</span>
-              <span class="about-accent-label">Maths · Physics · CS</span>
-            </div>
-          </div>
+
+      <div class="bento-card bento-stat reveal d3">
+        <span class="bst-num" data-count="4" data-suffix="+">0+</span>
+        <span class="bst-label">Instruments<br>played</span>
+      </div>
+      <div class="bento-card bento-stat reveal d4">
+        <span class="bst-num">∞</span>
+        <span class="bst-label">Side projects<br>running</span>
+      </div>
+      <div class="bento-card bento-stat reveal d5">
+        <span class="bst-num">1</span>
+        <span class="bst-label">Island<br>home</span>
+      </div>
+
+      <div class="bento-card bento-instruments reveal d2">
+        <div class="section-label">Instruments</div>
+        <div class="inst-list">
+          <span>Guitar</span><span>Bass</span><span>Keys</span><span>Drums</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- HORIZONTAL SCROLL WORK CARDS -->
+<!-- ── WORK CARDS (horizontal scroll) ── -->
 <section class="h-scroll-section" id="work">
   <div class="h-scroll-sticky">
-    <div class="h-scroll-header">
-      <div class="section-label">Disciplines</div>
-      <h2 class="section-heading" style="margin-bottom:0">What I Do</h2>
+    <div class="h-scroll-header container">
+      <div>
+        <div class="section-label">Disciplines</div>
+        <h2 class="h-scroll-title reveal">What I Do.</h2>
+      </div>
+      <div class="h-scroll-progress"><div class="hsp-bar" id="hsp-bar"></div></div>
     </div>
-    <div class="h-scroll-track" id="h-scroll-track">
+    <div class="h-scroll-viewport">
+      <div class="h-scroll-track" id="h-scroll-track">
 
-      <!-- MUSIC -->
-      <div class="work-card card-tilt" id="music">
-        <div class="card-tilt-inner" style="transition:transform .5s var(--ease)">
-          <!-- Replace with studio/guitar photo -->
-          <img src="images/toby-music.jpg" alt="Music" class="work-card-img"/>
-          <div class="work-card-body">
-            <div class="work-card-num">01 / 03</div>
-            <div class="tag-pill music">Music</div>
-            <h3 class="work-card-title">Sound & Production</h3>
-            <p class="work-card-text">Guitar, bass, keys, drums — writing and producing from bedroom demos to full band arrangements.</p>
-            <div class="work-card-tags">
-              <span class="work-card-tag">Guitar</span>
-              <span class="work-card-tag">Bass</span>
-              <span class="work-card-tag">Keys</span>
-              <span class="work-card-tag">Drums</span>
-              <span class="work-card-tag">Production</span>
+        <!-- MUSIC -->
+        <div class="wcard card-tilt" id="music">
+          <div class="card-inner">
+            <div class="wcard-img-wrap">
+              <img src="images/toby-music.jpg" alt="Music" class="wcard-img" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a0a,#0a0510)'"/>
+              <div class="wcard-img-tint music-tint"></div>
             </div>
-            <div class="work-card-cta">
-              <a href="https://open.spotify.com/artist/PLACEHOLDER" target="_blank" rel="noopener" class="btn btn-glass btn-sm" data-mag>Spotify</a>
-              <a href="https://youtube.com/@PLACEHOLDER" target="_blank" rel="noopener" class="btn btn-glass btn-sm" data-mag>YouTube</a>
-              <a href="pages/latest.html?tag=music" class="btn btn-ghost btn-sm" data-mag>Latest →</a>
+            <div class="wcard-body">
+              <div class="wcard-top">
+                <span class="wcard-num">01</span>
+                <span class="tag-pill music">Music</span>
+              </div>
+              <h3 class="wcard-title">Sound &amp; Production</h3>
+              <p class="wcard-text">Guitar, bass, keys, drums. Writing and producing from bedroom demos to full arrangements.</p>
+              <div class="wcard-tags"><span>Guitar</span><span>Bass</span><span>Keys</span><span>Drums</span><span>Production</span></div>
+              <div class="wcard-cta">
+                <a href="https://open.spotify.com/artist/PLACEHOLDER" target="_blank" rel="noopener" class="btn btn-glass btn-sm" data-mag>Spotify</a>
+                <a href="https://youtube.com/@PLACEHOLDER" target="_blank" rel="noopener" class="btn btn-glass btn-sm" data-mag>YouTube</a>
+                <a href="pages/latest.html?tag=music" class="btn btn-ghost btn-sm" data-mag>Latest →</a>
+              </div>
             </div>
+            <div class="card-shine"></div>
           </div>
         </div>
-      </div>
 
-      <!-- ENGINEERING -->
-      <div class="work-card card-tilt" id="engineering">
-        <div class="card-tilt-inner" style="transition:transform .5s var(--ease)">
-          <!-- Replace with electronics/workshop photo -->
-          <img src="images/toby-engineering.jpg" alt="Engineering" class="work-card-img"/>
-          <div class="work-card-body">
-            <div class="work-card-num">02 / 03</div>
-            <div class="tag-pill engineering">Engineering</div>
-            <h3 class="work-card-title">Build. Break. Repeat.</h3>
-            <p class="work-card-text">ESP32s, 3D-printed hardware, custom CarPlay installs. Headed for Robotics Engineering, chasing autonomous systems.</p>
-            <div class="work-card-tags">
-              <span class="work-card-tag">ESP32</span>
-              <span class="work-card-tag">Arduino</span>
-              <span class="work-card-tag">3D Printing</span>
-              <span class="work-card-tag">Robotics</span>
-              <span class="work-card-tag">Web Dev</span>
+        <!-- ENGINEERING -->
+        <div class="wcard card-tilt" id="engineering">
+          <div class="card-inner">
+            <div class="wcard-img-wrap">
+              <img src="images/toby-engineering.jpg" alt="Engineering" class="wcard-img" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a0a1a,#050515)'"/>
+              <div class="wcard-img-tint eng-tint"></div>
             </div>
-            <div class="work-card-cta">
-              <a href="https://github.com/tobygregg" target="_blank" rel="noopener" class="btn btn-glass btn-sm" data-mag>GitHub</a>
-              <a href="pages/latest.html?tag=engineering" class="btn btn-ghost btn-sm" data-mag>Latest →</a>
+            <div class="wcard-body">
+              <div class="wcard-top">
+                <span class="wcard-num">02</span>
+                <span class="tag-pill engineering">Engineering</span>
+              </div>
+              <h3 class="wcard-title">Build. Break. Repeat.</h3>
+              <p class="wcard-text">ESP32s, 3D-printed hardware, custom CarPlay installs. Heading for Robotics Engineering.</p>
+              <div class="wcard-tags"><span>ESP32</span><span>Arduino</span><span>3D Print</span><span>Robotics</span><span>Web Dev</span></div>
+              <div class="wcard-cta">
+                <a href="https://github.com/tobygregg" target="_blank" rel="noopener" class="btn btn-glass btn-sm" data-mag>GitHub</a>
+                <a href="pages/latest.html?tag=engineering" class="btn btn-ghost btn-sm" data-mag>Latest →</a>
+              </div>
             </div>
+            <div class="card-shine"></div>
           </div>
         </div>
-      </div>
 
-      <!-- VIDEOGRAPHY -->
-      <div class="work-card card-tilt" id="videography">
-        <div class="card-tilt-inner" style="transition:transform .5s var(--ease)">
-          <!-- Replace with camera/on-location photo -->
-          <img src="images/toby-video.jpg" alt="Videography" class="work-card-img"/>
-          <div class="work-card-body">
-            <div class="work-card-num">03 / 03</div>
-            <div class="tag-pill videography">Videography</div>
-            <h3 class="work-card-title">Frame Every Moment.</h3>
-            <p class="work-card-text">Lumix G85. Music videos, short films, event coverage. Always eager to work — if you need a videographer, let's talk.</p>
-            <div class="work-card-tags">
-              <span class="work-card-tag">Lumix G85</span>
-              <span class="work-card-tag">Music Video</span>
-              <span class="work-card-tag">Short Film</span>
-              <span class="work-card-tag">Editing</span>
+        <!-- VIDEOGRAPHY -->
+        <div class="wcard card-tilt" id="videography">
+          <div class="card-inner">
+            <div class="wcard-img-wrap">
+              <img src="images/toby-video.jpg" alt="Videography" class="wcard-img" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1018,#050a12)'"/>
+              <div class="wcard-img-tint vid-tint"></div>
             </div>
-            <div class="work-card-cta">
-              <a href="pages/contact.html" class="btn btn-white btn-sm" data-mag>Hire Me</a>
-              <a href="pages/latest.html?tag=videography" class="btn btn-ghost btn-sm" data-mag>Latest →</a>
+            <div class="wcard-body">
+              <div class="wcard-top">
+                <span class="wcard-num">03</span>
+                <span class="tag-pill videography">Videography</span>
+              </div>
+              <h3 class="wcard-title">Frame Every Moment.</h3>
+              <p class="wcard-text">Lumix G85. Music videos, short films, event coverage. Always available — if you need a videographer, let's talk.</p>
+              <div class="wcard-tags"><span>Lumix G85</span><span>Music Video</span><span>Short Film</span><span>Editing</span></div>
+              <div class="wcard-cta">
+                <a href="pages/contact.html" class="btn btn-white btn-sm" data-mag>Hire Me</a>
+                <a href="pages/latest.html?tag=videography" class="btn btn-ghost btn-sm" data-mag>Latest →</a>
+              </div>
             </div>
+            <div class="card-shine"></div>
           </div>
         </div>
+
+        <div style="width:80px;flex-shrink:0"></div>
       </div>
-
-      <!-- Spacer card -->
-      <div style="width:60px;flex-shrink:0"></div>
-
     </div>
   </div>
 </section>
 
-<!-- LATEST PREVIEW -->
+<!-- ── LATEST PREVIEW ── -->
 <section class="latest-preview" id="latest">
   <div class="container">
-    <div class="lp-header reveal">
-      <div>
+    <div class="lp-header">
+      <div class="reveal">
         <div class="section-label">Latest</div>
-        <h2 class="section-heading" style="margin-bottom:0">Fresh off the <span class="accent">workbench.</span></h2>
+        <h2 class="lp-title">Fresh off the <em class="accent">workbench.</em></h2>
       </div>
-      <a href="pages/latest.html" class="btn btn-ghost" data-mag>View All →</a>
+      <a href="pages/latest.html" class="btn btn-ghost reveal d3" data-mag>View All →</a>
     </div>
     <div class="lp-grid" id="lp-grid">
-      <div style="grid-column:1/-1;text-align:center;padding:60px 0;font-family:var(--font-mono);font-size:.75rem;color:var(--dimmer);letter-spacing:.1em">
-        Loading posts…
-      </div>
+      <div class="lp-loading">Loading posts…</div>
     </div>
   </div>
 </section>

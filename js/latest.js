@@ -1,4 +1,4 @@
-const SHEET_CSV_URL='https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pub?output=csv';
+const SHEET_CSV_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vSYHZEesHj-COGX_R5JTmE3Qz0em_KFpY5bra7YtDFESV1a7sDTQXGLXyUa1q3ZSOgrCw5jIX5dm79x/pub?output=csv';
 let allPosts=[],activeTag='all';
 
 function parseCSV(text){

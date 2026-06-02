@@ -8,7 +8,9 @@ const NAV_HTML=`
     <a href="/pages/latest.html" class="nav-link">Latest</a>
     <a href="/pages/contact.html" class="nav-link">Contact</a>
   </div>
-  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-mobile-menu" id="nav-mobile-menu">
     <a href="/index.html" class="nav-mobile-link">Home</a>
     <a href="/pages/latest.html" class="nav-mobile-link">Latest</a>
@@ -35,18 +37,38 @@ const FOOTER_HTML=`
   </div>
 </footer>`;
 
-function injectComponents(){
-  const n=document.getElementById('nav-root');if(n)n.innerHTML=NAV_HTML;
-  const f=document.getElementById('footer-root');if(f)f.innerHTML=FOOTER_HTML;
-  const yr=document.getElementById('footer-year');if(yr)yr.textContent=new Date().getFullYear();
-  const path=window.location.pathname;
-  document.querySelectorAll('.nav-link,.nav-mobile-link').forEach(l=>{
-    if(l.getAttribute('href')===path||(path==='/'&&l.getAttribute('href')==='/index.html'))l.classList.add('active');
+function injectComponents() {
+  const n = document.getElementById('nav-root');
+  if (n) n.innerHTML = NAV_HTML;
+  const f = document.getElementById('footer-root');
+  if (f) f.innerHTML = FOOTER_HTML;
+  const yr = document.getElementById('footer-year');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  const path = window.location.pathname;
+  document.querySelectorAll('.nav-link, .nav-mobile-link').forEach(l => {
+    const href = l.getAttribute('href');
+    if (href === path || (path === '/' && href === '/index.html') ||
+        (path.endsWith('/') && href === '/index.html')) {
+      l.classList.add('active');
+    }
   });
-  const burger=document.getElementById('nav-burger');
-  const mob=document.getElementById('nav-mobile-menu');
-  if(burger&&mob){burger.addEventListener('click',()=>{burger.classList.toggle('open');mob.classList.toggle('open')})}
-  const nav=document.getElementById('site-nav');
-  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+
+  const burger = document.getElementById('nav-burger');
+  const mob = document.getElementById('nav-mobile-menu');
+  if (burger && mob) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+
+  const nav = document.getElementById('site-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  }
 }
-document.addEventListener('DOMContentLoaded',injectComponents);
+
+document.addEventListener('DOMContentLoaded', injectComponents);
